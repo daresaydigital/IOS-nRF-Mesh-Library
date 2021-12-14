@@ -269,7 +269,6 @@
 		529B756F223FF1AE008F1CE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		529B7571223FFC39008F1CE7 /* AppKeysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeysViewController.swift; sourceTree = "<group>"; };
 		529B7574224107A5008F1CE7 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppInfo.swift; path = Utils/AppInfo.swift; sourceTree = "<group>"; };
-		529B757E22426D70008F1CE7 /* nRFMeshProvision_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nRFMeshProvision_Example.entitlements; sourceTree = "<group>"; };
 		529B758522428A45008F1CE7 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "Utils/UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		529B759B2243BA10008F1CE7 /* NetworkKeysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkKeysViewController.swift; sourceTree = "<group>"; };
 		529B75A92248E275008F1CE7 /* nRFMeshProvision_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nRFMeshProvision_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -715,7 +714,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				529B757E22426D70008F1CE7 /* nRFMeshProvision_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for nRFMeshProvision */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -858,8 +856,9 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P3R8YQEV4L;
+						DevelopmentTeam = 88S3B6XZEL;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1375,9 +1374,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				CODE_SIGN_ENTITLEMENTS = nRFMeshProvision_Example.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3R8YQEV4L;
+				DEVELOPMENT_TEAM = 88S3B6XZEL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = nRFMeshProvision/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1387,8 +1388,9 @@
 				MARKETING_VERSION = 3.1.4;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nordicsemi.nRFProvisioner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitcycle.nRFProvisioner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -1402,9 +1404,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
-				CODE_SIGN_ENTITLEMENTS = nRFMeshProvision_Example.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P3R8YQEV4L;
+				DEVELOPMENT_TEAM = 88S3B6XZEL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = nRFMeshProvision/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1414,8 +1418,9 @@
 				MARKETING_VERSION = 3.1.4;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nordicsemi.nRFProvisioner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bitcycle.nRFProvisioner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
