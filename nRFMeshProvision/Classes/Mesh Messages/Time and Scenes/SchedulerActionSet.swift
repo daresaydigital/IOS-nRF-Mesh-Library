@@ -54,7 +54,7 @@ public struct SchedulerActionSet: StaticAcknowledgedMeshMessage {
     }
     
     public init?(parameters: Data) {
-        guard parameters.count == 80 else {
+        guard parameters.count == 10 else {
             return nil
         }
         

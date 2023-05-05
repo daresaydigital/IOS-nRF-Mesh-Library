@@ -34,18 +34,23 @@ public struct SchedulerActionGet: StaticAcknowledgedMeshMessage {
     public static let opCode: UInt32 = 0x8248
     public static let responseType: StaticMeshMessage.Type = SchedulerActionStatus.self
     
+    /// The scheduler registry index the message is for.
+    public let index: UInt8
+
     public var parameters: Data? {
-        return nil
+        return Data([index])
     }
     
-    public init() {
-        // Empty
+    public init(index: UInt8) {
+        self.index = index
     }
     
     public init?(parameters: Data) {
-        guard parameters.isEmpty else {
+        guard parameters.count == 1 else {
             return nil
         }
+
+        self.index = parameters[0]
     }
     
 }

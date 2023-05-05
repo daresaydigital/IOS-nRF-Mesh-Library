@@ -53,13 +53,15 @@ public struct SchedulerActionStatus: GenericMessage {
     }
     
     public init?(parameters: Data) {
-        guard parameters.count == 80 else {
+        if parameters.count == 10 {
+            let encode = SchedulerRegistryEntry.unmarshal(parameters)
+            self.index = encode.index
+            self.entry = encode.entry
+        } else if parameters.count == 1 {
+            self.index = parameters[0]
+            self.entry = .init()
+        } else {
             return nil
         }
-        
-        let encode = SchedulerRegistryEntry.unmarshal(parameters)
-        self.index = encode.index
-        self.entry = encode.entry
     }
-    
 }
