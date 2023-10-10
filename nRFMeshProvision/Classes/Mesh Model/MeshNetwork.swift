@@ -326,18 +326,6 @@ public class MeshNetwork: Codable {
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let schema = try container.decode(String.self, forKey: .schema)
-        let id = try container.decode(String.self, forKey: .id)
-        
-        guard schema == "http://json-schema.org/draft-04/schema#" else {
-            throw DecodingError.dataCorruptedError(forKey: .schema, in: container,
-                                                   debugDescription: "Unsupported JSON schema")
-        }
-        guard id == "http://www.bluetooth.com/specifications/assigned-numbers/mesh-profile/cdb-schema.json#" ||
-              id == "TBD" else {
-            throw DecodingError.dataCorruptedError(forKey: .id, in: container,
-                                                   debugDescription: "Unsupported ID")
-        }
         
         // In version 3.0 of this library the Mesh UUID format has changed
         // from 32-character hexadecimal String to standard UUID format (RFC 4122).
