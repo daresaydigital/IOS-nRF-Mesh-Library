@@ -128,7 +128,7 @@ private extension SceneClientHandler {
             meshNetwork.scenes
                 .filter { !confirmedScenes.contains($0.number) }
                 .forEach {
-									print("QQQ", "Removing \(source) from scene \($0)")
+									print("QQQ", "Removing \(source) from scene \($0.number)")
 									$0.remove(address: source)
 								}
 
