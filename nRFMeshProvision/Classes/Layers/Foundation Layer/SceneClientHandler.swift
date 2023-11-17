@@ -109,11 +109,14 @@ private extension SceneClientHandler {
         case let status as SceneRegisterStatus:
             /// Scenes confirmed to be in the Scene Register on the Node.
             let confirmedScenes = status.scenes.filter { $0.isValidSceneNumber }
+					print("QQQ", "confirmedScenes = \(confirmedScenes)")
             // Add the Node to all confirmed scenes.
             for scene in confirmedScenes {
                 if let sceneObject = meshNetwork.scenes[scene] {
+									print("QQQ", "Adding \(source) to existing scene")
                     sceneObject.add(address: source)
                 } else {
+									print("QQQ", "Adding \(source) to new scene")
                     let sceneObject = Scene(scene,
                                                   name: NSLocalizedString("New Scene", comment: ""))
                     sceneObject.add(address: source)
@@ -124,8 +127,11 @@ private extension SceneClientHandler {
             // stored (that is all other that confirmed).
             meshNetwork.scenes
                 .filter { !confirmedScenes.contains($0.number) }
-                .forEach { $0.remove(address: source) }
-            
+                .forEach {
+									print("QQQ", "Removing \(source) from scene \($0)")
+									$0.remove(address: source)
+								}
+
         default:
             break
         }
